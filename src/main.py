@@ -1,5 +1,4 @@
 import socket
-import re
 
 
 def resp_page(file_path):
@@ -25,8 +24,6 @@ if __name__ == "__main__":
         recv_data = client_socket.recv(4096)
         recv_content = recv_data.decode('utf-8')
         # print(recv_content)
-        with open("a.txt", "w") as f:
-            f.writelines(recv_content)
 
         if recv_content == 'q':
             client_socket.close()
